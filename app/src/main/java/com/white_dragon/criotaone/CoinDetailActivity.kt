@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.squareup.picasso.Picasso
 import com.white_dragon.criotaone.databinding.ActivityCoinDetailBinding
 
@@ -26,7 +26,7 @@ class CoinDetailActivity : AppCompatActivity() {
         }
         val fromSymbols = intent.getStringExtra(EXTRA_FROM_SYMBOL)
 
-        viewModel = ViewModelProviders.of(this)[CoinViewModel::class.java]
+        viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         viewModel.getDetailInfo(fromSymbols!!).observe(this, Observer {
             binding.tvPrice.text = it.price
             binding.tvMinPrice.text = it.lowDay

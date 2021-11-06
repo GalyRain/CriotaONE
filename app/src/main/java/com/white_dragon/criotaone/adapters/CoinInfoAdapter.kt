@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.white_dragon.criotaone.R
@@ -47,11 +48,10 @@ class CoinInfoAdapter(private val context: Context) :
     }
 
     inner class CoinInfoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivLogoCoin: ImageView = itemCount.findViewById(ivLogoCoin)
-        val ivLogoCoin1 = itemView.ivLogoCoin
-        val tvSymbols = itemView.tvSymbols
-        val tvPrice = itemView.tvPrice
-        val tvLastUpdate = itemView.tvLastUpdate
+        val ivLogoCoin: ImageView = itemView.findViewById(R.id.ivLogoCoin)
+        val tvSymbols: TextView = itemView.findViewById(R.id.tvSymbols)
+        val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
+        val tvLastUpdate: TextView = itemView.findViewById(R.id.tvLastUpdate)
     }
 
     interface OnCoinClickListener {

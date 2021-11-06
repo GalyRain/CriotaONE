@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.white_dragon.criotaone.adapters.CoinInfoAdapter
 import com.white_dragon.criotaone.databinding.ActivityCoinPriceListBinding
@@ -30,7 +31,7 @@ class CoinPriceListActivity : AppCompatActivity() {
             }
         }
 
-        viewModel = ViewModelProviders.of(this)[CoinViewModel::class.java]
+        viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         viewModel.priceList.observe(this, Observer {
             adapter.coinInfoList = it
         })
