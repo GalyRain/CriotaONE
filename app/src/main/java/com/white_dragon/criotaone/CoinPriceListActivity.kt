@@ -1,12 +1,9 @@
 package com.white_dragon.criotaone
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.white_dragon.criotaone.adapters.CoinInfoAdapter
 import com.white_dragon.criotaone.databinding.ActivityCoinPriceListBinding
 import com.white_dragon.criotaone.pojo.CoinPriceInfo
@@ -35,7 +32,5 @@ class CoinPriceListActivity : AppCompatActivity() {
         viewModel.priceList.observe(this, Observer {
             adapter.coinInfoList = it
         })
-
-
     }
 }
